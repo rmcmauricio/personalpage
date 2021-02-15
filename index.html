@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Ricardo Maurício</title>
+	<meta name="author" content="Ricardo Maurício" />
+	<meta name="description" content="Ricardo Maurício" />
+	<meta name="keywords" content="web developer, webdesign, freelancer" />
+	<meta name="Resource-type" content="Document" />
+
+	<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="css/jquery.pagepiling.css" />
+	<link rel="stylesheet" type="text/css" href="css/style.css" />
+
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="site.webmanifest">
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+
+	<script type="text/javascript" src="js/jquery.pagepiling.min.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function () {
+
+			/*
+			* Plugin intialization
+			*/
+			$('#pagepiling').pagepiling({
+				menu: '#menu',
+				anchors: ['home', 'about', 'page3', 'page4'],
+				sectionsColor: ['#3A5574', '#1D2738', '#5690BD', '#7FA8D1'],
+				navigation: {
+					'position': 'right',
+					'tooltips': ['Home', 'About', 'Page 3', 'Page 4']
+				},
+				afterRender: function () {
+					$('#pp-nav').addClass('custom');
+				},
+				afterLoad: function (anchorLink, index) {
+					if (index > 1) {
+						$('#pp-nav').removeClass('custom');
+					} else {
+						$('#pp-nav').addClass('custom');
+					}
+				}
+			});
+
+
+			/*
+			* Internal use of the demo website
+			*/
+			$('#showExamples').click(function (e) {
+				e.stopPropagation();
+				e.preventDefault();
+				$('#examplesList').toggle();
+			});
+
+			$('html').click(function () {
+				$('#examplesList').hide();
+			});
+		});
+	</script>
+
+
+
+
+</head>
+
+<body>
+	<ul id="menu">
+		<li data-menuanchor="home" class="active"><a href="#home">Home</a></li>
+		<li data-menuanchor="about"><a href="#about">About</a></li>
+
+	</ul>
+
+
+	<div id="pagepiling">
+		<div class="section" id="section1">
+			<div class="animation fadeIn">
+				<h1>Ricardo Maurício</h1>
+				<p>Full Stack Web Developer</p>
+			</div>
+			<div class="icons">
+				<a href="mailto:me@ricardo.mauricio.pt" target="new">
+					<div class="icon"><img src="images/email.png" alt=""></div>
+				</a>
+				<a href="https://www.linkedin.com/in/ricardo-mauricio-27a84813" target="new">
+					<div class="icon"><img src="images/linkedin.png" alt=""></div>
+				</a>
+				<a href="https://www.facebook.com/cantiflas/" target="new">
+					<div class="icon"><img src="images/facebook.png" alt=""></div>
+				</a>
+			</div>
+			<p>...</p>
+
+
+			<div class="icons">
+				<div class="icon"><img src="images/html-5.png" alt="HTML5" title="HTML5">
+					<div class="desc"><span>HTML5</span></div>
+				</div>
+				<div class="icon"><img src="images/css-3.png" alt="CSS3" title="CSS3">
+					<div class="desc"><span>CSS3</span></div>
+				</div>
+				<div class="icon"><img src="images/javascript.jpg" alt="JAVASCRIPT" title="JAVASCRIPT">
+					<div class="desc"><span>JAVASCRIPT</span></div>
+				</div>
+				<div class="icon"><img src="images/php.png" alt="PHP" title="PHP">
+					<div class="desc"><span>PHP</span></div>
+				</div>
+				<div class="icon"><img src="images/wordpress.png" alt="WORDPRESS" title="WORDPRESS">
+					<div class="desc"><span>WORDPRESS</span></div>
+				</div>
+			</div>
+			<br />
+
+		</div>
+		<div class="section" id="section2">
+			<div class="intro">
+				<div id="colors"></div>
+				<h1>About</h1>
+				<p>...</p>
+			</div>
+		</div>
+
+
+	</div>
+
+</body>
+
+</html>
